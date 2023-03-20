@@ -28,7 +28,7 @@ class networkTraffic:
                 if captureSave == True:
                     packetsList.append( self.PacketDetails(raw_packet, filtering=self.PacketFilter) )
                     print( self.PacketDetails(raw_packet, filtering=self.PacketFilter) )
-                    if len(packetsList) + 1 > self.PacketsRefreshLimit:
+                    if len(packetsList) >= self.PacketsRefreshLimit:
                         self.csvGeneration(packetsList)
                         packetsList = []
                         print("refreshed")
